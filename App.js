@@ -1,7 +1,8 @@
 import { StatusBar, StyleSheet, Text, View } from "react-native";
+import Context from "./API/Context";
 import Tabs from "./components/Tabs";
 
-export default function App() {
+function App() {
   return (
     <View style={{ ...styles.container, backgroundColor: "#282c35" }}>
       <Tabs />
@@ -15,3 +16,11 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight,
   },
 });
+
+export default () => {
+  return (
+    <Context>
+      <App />
+    </Context>
+  );
+};
