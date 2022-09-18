@@ -3,7 +3,7 @@ import Tabs from "./components/Tabs";
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, backgroundColor: "#282c35" }}>
       <Tabs />
     </View>
   );
