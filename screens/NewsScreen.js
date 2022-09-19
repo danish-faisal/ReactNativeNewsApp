@@ -9,7 +9,7 @@ const NewsScreen = () => {
   } = useContext(NewsContext);
 
   const [activeIndex, setActiveIndex] = useState();
-  const windowHeight = Dimensions("window").height;
+  const windowHeight = Dimensions.get("window").height;
 
   return (
     <View style={styles.carousel}>
