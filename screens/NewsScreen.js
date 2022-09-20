@@ -1,7 +1,8 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, Dimensions, StyleSheet } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { NewsContext } from "../API/Context";
+import SingleNews from "../components/SingleNews";
 
 const NewsScreen = () => {
   const {
@@ -20,6 +21,9 @@ const NewsScreen = () => {
           sliderHeight={300}
           itemHeight={windowHeight}
           vertical={true}
+          renderItem={({ item, index }) => (
+            <SingleNews item={item} index={index} />
+          )}
           onSnapToItem={(index) => setActiveIndex(index)}
         />
       )}
@@ -31,6 +35,7 @@ const styles = StyleSheet.create({
   carousel: {
     flex: 1,
     backgroundColor: "black",
+    transform: [{ scaleY: -1 }],
   },
 });
 
